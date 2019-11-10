@@ -1,0 +1,130 @@
+@import "bourbon", "neat";
+$mobile: new-breakpoint(max-width 640px 4);
+
+ .add-furniture, .add-rooms-button {
+	 width: 20px;
+	 height: 20px;
+	 display: inline-block;
+	 cursor: pointer;
+	 margin: 0 0 0 1em;
+	 box-shadow: none !important;
+ }
+ #room-furnitures {
+	 float: left;
+ }
+ #furniture-count, #selected-furniture-count {
+	width: 40px;
+    margin: 0 10px;
+    height: 20px;
+    font-size: 15px;
+ }
+ #furniture-count {
+	display: block;
+    float: left;
+ }
+ .selected-furniture {
+	 margin: 10px 0;
+	 padding-left: 9px;
+	 input {
+		 margin-left: 18px !important;
+	 }
+}
+ .additional-single-room {
+	display: none;
+ }
+ .additional-single-room h3 {
+	 float:left;
+ }
+ .remove-room, .remove-furniture {
+	 width: 20px;
+	 height: 20px;
+	 display: inline-block;
+	 cursor: pointer;
+	 margin: 0 0 0 1em;
+	 box-shadow: none !important;
+ }
+ #single-furniture-container {
+	 clear: both;
+ }
+ .header-container {
+	 padding: 5px 0;
+ }
+ .header-container h3 {
+	 margin: 0 !important;
+ }
+ .preloader {
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 background-color: rgba(255, 255, 255, 0.95);
+	 height: 100%;
+	 width: 100%;
+	 z-index: 9999;
+ }
+ .preloader_gif {
+	 height: 194px;
+	 width: 194px;
+	 display: inline-block;
+	 position: fixed;
+	 top: 38%;
+	 left: 42%;
+	 background: url('../images/ripple.gif');
+ }
+ .hermes_thankyou{
+	 text-align: center;
+	 width: 100%;
+ }
+ .hermes_failed {
+	 text-align: center;
+	 color: #fc3737;
+	 margin-bottom: 30px;
+ }
+ 
+ // SASS FROM HERE
+ 
+.single-room, .additional-single-room[style="display: block;"] {
+	@include span-columns(4);
+	@include media($mobile) {
+	 	@include span-columns(4);
+	 }
+	 &:nth-of-type(3) {
+		 @include omega;
+	 }
+	 &:last-child {
+		 margin-right: inherit;
+	 }
+	 h3 {
+		 margin: 0;
+		 padding: 5px 0;
+	 }
+}
+ .hermes_form {
+	 input {
+	 	margin-bottom: 15px;
+	 }
+	 #hms-name, #hms-moving-date, #hms-apartment-type, #hms-request-quote, .hms-add-rooms, .hms-rooms-container, .add-rooms-container, .hermes_failed, .hermes_thankyou {
+	   @include span-columns(12);
+	 }
+	 #hms-request-quote {
+		 font-size: 20px;
+		 padding: 10px;
+		 margin: 15px 0;
+	 }
+	 #hms-phone, #hms-moving-from-address, #hms-moving-to-address, #hms-moving-date-container {
+	   @include span-columns(6);
+	   @include media($mobile) {
+		 	@include span-columns(4);
+		 }
+	 }
+	 #hms-email, #hms-moving-from-city, #hms-moving-to-city, #hms-apartment-type-container {
+	   @include span-columns(6);
+	   @include omega;
+	   @include media($mobile) {
+		 	@include span-columns(4);
+		 }
+	   
+	 }
+} 
+.error-field{
+	background-color: #ff7a82 !important;
+}
